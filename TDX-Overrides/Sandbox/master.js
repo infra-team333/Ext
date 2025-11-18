@@ -1,30 +1,41 @@
 // master.js
 
-(async function () {
-  // Create a single cache-busting value for all module loads
+(function () {
+
   const cacheBust = `?v=${Date.now()}`;
+  const basePath = 'https://infra-team333.github.io/Ext/TDX-Overrides/Sandbox/';
 
-  async function load(modulePath) {
-    return await import(`${modulePath}${cacheBust}`);
+  // Load JS file via script tag
+  function loadScript(file) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = basePath + file + cacheBust;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
   }
 
-  // Always load global overrides
-  const globalOverrides = await load('./globalOverrides.js');
+  async function init() {
+    // Always load global overrides
+    await loadScript('globalOverrides.js');
 
-  // Create the <style> element
-  const style = document.createElement('style');
-  style.innerHTML = globalOverrides.css;
+    let css = window.globalCSS || "";
 
-  // Conditionally load the DDS Catalogue CSS
-  const currentUrl = window.location.href;
-  if (currentUrl.includes("ServiceDet?ID=4605")) {
-    const dds = await load('./ddsCatalogue.js');
-    style.innerHTML += `
-      ${dds.css}
-      ${dds.conditionalCss}
-    `;
+    // Check if DDS should load
+    if (window.location.href.includes("ServiceDet?ID=4605")) {
+      await loadScript('ddsCatalogue.js');
+      css += window.ddsCSS || "";
+      css += window.ddsConditionalCSS || "";
+    }
+
+    // Inject FINAL <style> at the end (guarantees overwrite)
+    const style = document.createElement('style');
+    style.innerHTML = css;
+    document.head.appendChild(style);
   }
 
-  document.head.appendChild(style);
+  init();
+
 })();
 
