@@ -1,6 +1,6 @@
 // ddsCatalogue.js
 
-export const css = `
+window.ddsCSS = `
 .dds-container {
   font-family: 'Segoe UI', Roboto, sans-serif;
   background-color: #F8FAFC;
@@ -94,7 +94,7 @@ export const css = `
 }
 `;
 
-export const conditionalCss = `
+window.ddsConditionalCSS = `
 /* Hide sidebar and make content full width on DDS page */
 #servicesContent .row.gutter-top #divSidebar {
   display: none !important;
