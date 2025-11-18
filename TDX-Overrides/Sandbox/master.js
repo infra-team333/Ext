@@ -1,5 +1,5 @@
 (function() {
-  const baseURL = "https://kajih82.github.io/CustomJS/";
+  const baseURL = "https://infra-team333.github.io/Ext/TDX-Overrides/Sandbox/";
 
   // Always load global overrides
   const scriptsToLoad = ["globalOverrides.js"];
