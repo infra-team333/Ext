@@ -1,20 +1,32 @@
 // masterOverrides-Sandbox.js — Modular, maintainable, FOUC-free
 
 // ======================== Versioning Notice ========================
-// Current version: 2511200918  (format: yymmddhhmm)
-// 
-// IMPORTANT: When updating this file, you MUST also update the version
-// number in the TDX Client HTML Header to force browsers to fetch the
-// new file.
+// Current version: v=251120 (YYMMDD), f=1120 (HHMM)
 //
-// Location:
-//   TDX Admin Console > Applications > Service Desk > Settings > 
-//   Client HTML Header
+// IMPORTANT: When updating this file, you MUST also update BOTH
+// query parameters in the TDX Client HTML Header to force browsers
+// to fetch the new file and avoid caching issues.
 //
-// Update the script tag query parameter to match the new version:
-//   <script src=".../masterOverrides-Sandbox.js?v=2511200906"></script>
+// Format:
+//   v = date in YYMMDD
+//   f = time in HHMM
 //
-// This ensures proper cache-busting.
+// Location in TDX Admin Console:
+//   Applications → Service Desk → Settings → Client HTML Header
+//
+// Example of the script tag in TDX Client HTML Header:
+//   <script src="https://infra-team333.github.io/Ext/TDX-Overrides/master-Sandbox.js?v=251120&f=1120"></script>
+//
+// Update procedure:
+// 1. Change 'v' if the date changes (e.g., new day of update)
+// 2. Change 'f' to match the time of the update (HHMM)
+// 3. Save the header; browsers will fetch the new file immediately.
+//
+// Notes:
+// - Edge caches aggressively; updating both parameters guarantees
+//   that all browsers retrieve the latest version.
+// - This also ensures that your CSS overrides load immediately and
+//   prevents FOUC (Flash of Unstyled Content).
 // ===================================================================
 
 (function() {
@@ -42,7 +54,7 @@
         border-radius: 20px;
         padding: 40px 30px;
         max-width: 1200px;
-        margin: 40px auto;
+        margin: 0px auto 40px auto;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
       }
 
