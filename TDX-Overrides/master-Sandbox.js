@@ -1,4 +1,22 @@
 // masterOverrides-Sandbox.js — Modular, maintainable, FOUC-free
+
+// ======================== Versioning Notice ========================
+// Current version: 2511200918  (format: yymmddhhmm)
+// 
+// IMPORTANT: When updating this file, you MUST also update the version
+// number in the TDX Client HTML Header to force browsers to fetch the
+// new file.
+//
+// Location:
+//   TDX Admin Console > Applications > Service Desk > Settings > 
+//   Client HTML Header
+//
+// Update the script tag query parameter to match the new version:
+//   <script src=".../masterOverrides-Sandbox.js?v=2511200906"></script>
+//
+// This ensures proper cache-busting.
+// ===================================================================
+
 (function() {
   const currentUrl = window.location.href;
 
@@ -117,6 +135,10 @@
         .col-md-8 {
           width: 100% !important;
         }
+      }
+      /* Hide the main DDS title */
+      #divMainContent h1.wrap-text {
+        display: none !important;
       }
     `,
 
