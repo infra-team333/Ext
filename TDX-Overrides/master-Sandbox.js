@@ -110,8 +110,6 @@
       }
 
       .dds-description {
-        font-size: 18px;
-        line-height: 2.2rem;
         background-color: #ffffff;
         border-left: 6px solid;
         border-image: linear-gradient(180deg, #00B5E2, #005C8B) 1;
@@ -126,7 +124,8 @@
       .dds-description p {
         margin: 0;
         color: #475569;  
-        line-height: 1.6;
+        font-size: 18px;
+        line-height: 2.2rem;
         margin-left: 20px;
       }
 
