@@ -1,4 +1,34 @@
-// master-Production.js — Modular, maintainable, FOUC-free
+// masterOverrides-Sandbox.js — Modular, maintainable, FOUC-free
+
+// ======================== Versioning Notice ========================
+// Current version: v=251124 (YYMMDD), f=0832 (HHMM)
+//
+// IMPORTANT: When updating this file, you MUST also update BOTH
+// query parameters in the TDX Client HTML Header to force browsers
+// to fetch the new file and avoid caching issues.
+//
+// Format:
+//   v = date in YYMMDD
+//   f = time in HHMM
+//
+// Location in TDX Admin Console:
+//   Applications → Service Desk → Settings → Client HTML Header
+//
+// Example of the script tag in TDX Client HTML Header:
+//   <script src="https://infra-team333.github.io/Ext/TDX-Overrides/master-Production.js?v=251124&f=0832"></script>
+//
+// Update procedure:
+// 1. Change 'v' if the date changes (e.g., new day of update)
+// 2. Change 'f' to match the time of the update (HHMM)
+// 3. Save the header; browsers will fetch the new file immediately.
+//
+// Notes:
+// - Edge caches aggressively; updating both parameters guarantees
+//   that all browsers retrieve the latest version.
+// - This also ensures that your CSS overrides load immediately and
+//   prevents FOUC (Flash of Unstyled Content).
+// ===================================================================
+
 (function() {
   const currentUrl = window.location.href;
 
@@ -8,8 +38,7 @@
   const cssSections = {
     // Global overrides (always applied)
     global: `
-    /* ========== Hide Submit Button ========== */
-    /* ========== If named HideMe3000 ========== */
+      /* ========== GLOBAL OVERRIDES ========== */
       #btnSubmit[value="HideMe3000"] {
         display: none !important;
       }
@@ -18,13 +47,14 @@
 
     // DDS Service Catalogue (combined base + conditional)
     ddsCatalogue: `
+      /* ========== DDS SERVICE CATALOGUE ========== */
       .dds-container {
         font-family: 'Segoe UI', Roboto, sans-serif;
         background-color: #F8FAFC;
         border-radius: 20px;
         padding: 40px 30px;
         max-width: 1200px;
-        margin: 40px auto;
+        margin: 0px auto 40px auto;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
       }
 
@@ -94,7 +124,8 @@
       .dds-description p {
         margin: 0;
         color: #475569;  
-        line-height: 1.6;
+        font-size: 18px;
+        line-height: 2.2rem;
         margin-left: 20px;
       }
 
@@ -109,7 +140,7 @@
         }
       }
 
-      /* Hide Sidebar Buttons */
+      /* Conditional only for ServiceDet?ID=4605 */
       #servicesContent .row.gutter-top #divSidebar {
         display: none !important;
       }
@@ -117,6 +148,10 @@
         .col-md-8 {
           width: 100% !important;
         }
+      }
+      /* Hide the main DDS title */
+      #divMainContent h1.wrap-text {
+        display: none !important;
       }
     `,
 
