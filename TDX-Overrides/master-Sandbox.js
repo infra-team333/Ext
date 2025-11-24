@@ -296,6 +296,10 @@
     {
       match: url => url.includes("ServiceDet?ID=4605"),
       cssKeys: ['ddsCatalogue']
+    },
+    {
+      match: url => url.includes("ServiceDet?ID=6491"),
+      cssKeys: ['ddsPurple']
     }
     // Add future services here
     // {
