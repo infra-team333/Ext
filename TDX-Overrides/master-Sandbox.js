@@ -155,6 +155,126 @@
       }
     `,
 
+    ddsPurple: `
+      /* ========== DDS SERVICE CATALOGUE (PURPLE BRAND VERSION) ========== */
+      .dds-container-purple {
+        font-family: 'Segoe UI', Roboto, sans-serif;
+        background-color: #F8FAFC;
+        border-radius: 20px;
+        padding: 40px 30px;
+        max-width: 1200px;
+        margin: 0px auto 40px auto;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      }
+      
+      /* HEADER TITLE */
+      .dds-title-purple {
+        color: #0E2A78;
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        font-weight: 600;
+      }
+      
+      /* GRID */
+      .dds-services-purple .dds-grid-purple {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      
+      /* CARDS */
+      .dds-card-purple {
+        background: white;
+        border: 1px solid #E2E8F0;
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: 0.3s;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      }
+      
+      .dds-card-purple:hover {
+        transform: translateY(-6px);
+        border-color: #9546D6;
+        box-shadow: 0 6px 18px rgba(149, 70, 214, 0.25);
+      }
+      
+      /* HEADINGS */
+        .dds-title-purple h2,
+        .dds-card-purple h3 {
+        color: #0E2A78;
+        margin-top: 0;
+      }
+      
+      /* PARAGRAPH TEXT */
+        .dds-card-purple p {
+        color: #475569;
+      }
+      
+      /* LINKS */
+        .dds-card-purple a {
+        display: inline-block;
+        margin-top: 1rem;
+        color: #2346C6;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      
+      .dds-card-purple a:hover {
+        color: #5A2D8B;
+      }
+      
+      /* DESCRIPTION BOX */
+        .dds-description-purple {
+        background-color: #ffffff;
+        border-left: 6px solid;
+        border-image: linear-gradient(180deg, #B680F0, #5A2D8B) 1;
+        padding: 20px;
+        margin: 0px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .dds-description-purple p {
+        margin: 0;
+        color: #475569;
+        font-size: 18px;
+        line-height: 2.2rem;
+        margin-left: 20px;
+      }
+      
+      .dds-description-purple img {
+        width: 200px;
+        height: 226px;
+      }
+      
+      /* MOBILE */
+      @media (max-width: 600px) {
+        .dds-container-purple {
+          padding: 20px 15px;
+        }
+      }
+      
+      /* Conditional only for ServiceDet?ID=4605 */
+      #servicesContent .row.gutter-top #divSidebar {
+        display: none !important;
+      }
+      
+      @media (min-width: 992px) {
+        .col-md-8 {
+        width: 100% !important;
+      }
+      }
+      
+      /* Hide the main DDS title */
+        #divMainContent h1.wrap-text {
+        display: none !important;
+      }
+    `,
+
     // Example: future services can just be added here
     serviceX: `
       /* CSS for Service X */
