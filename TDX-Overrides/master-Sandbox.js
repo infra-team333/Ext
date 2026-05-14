@@ -174,8 +174,10 @@
       cssKeys: ['global']
     },
     {
-      match: url => url.includes("ServiceDet?ID=4605"),
-      cssKeys: ['ddsCatalogue']
+      match: url =>
+        url.includes("ServiceDet?ID=4605") ||
+        url.includes("/Service/4605/"),
+        cssKeys: ['ddsCatalogue']
     }
     // Add future services here
     // {
