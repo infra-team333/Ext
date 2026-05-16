@@ -1,7 +1,7 @@
 // masterOverrides-Sandbox.js — Modular, maintainable, FOUC-free
 
 // ======================== Versioning Notice ========================
-// Current version: v=251124 (YYMMDD), f=0832 (HHMM)
+// Current version: v=260515 (YYMMDD), f=2142 (HHMM)
 //
 // IMPORTANT: When updating this file, you MUST also update BOTH
 // query parameters in the TDX Client HTML Header to force browsers
@@ -174,8 +174,10 @@
       cssKeys: ['global']
     },
     {
-      match: url => url.includes("ServiceDet?ID=4605"),
-      cssKeys: ['ddsCatalogue']
+      match: url => 
+        url.includes("ServiceDet?ID=4605") ||
+        url.includes("/Service/4605/"),
+        cssKeys: ['ddsCatalogue']
     }
     // Add future services here
     // {
